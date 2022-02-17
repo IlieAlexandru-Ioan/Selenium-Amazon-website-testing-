@@ -10,7 +10,7 @@ class TestAmazon:
     def setup(self):
         self.driver = webdriver.Chrome(executable_path='/Users/alilie/Desktop/Selenium_project/chromedriver')
         self.driver.implicitly_wait(5)
-        self.driver.get('https://www.amazon.com/')  # e imp sa punem si https
+        self.driver.get('https://www.amazon.com/') 
 
 
     @pytest.mark.parametrize('search_query', search_words)
@@ -18,7 +18,7 @@ class TestAmazon:
 
         # vrem sa interactionam cu bara de search
         search = self.driver.find_element(By.ID, 'twotabsearchtextbox')
-        search.send_keys(search_query, Keys.ENTER)  # asta tastez in casuta
+        search.send_keys(search_query, Keys.ENTER)  # tastez in casuta
 
         # verificam ca am cautat dupa dress
 
